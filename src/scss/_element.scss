@@ -1,0 +1,69 @@
+@import "_variables.scss";
+
+%btn {
+  position: absolute;
+  bottom: 100px;
+  text-decoration: none;
+  color: inherit;
+  border: 0.6px solid white;
+  border-radius: 99px;
+  padding: 10px 35px;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+%contantTitleBig {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .titleBig__header {
+    position: relative;
+    top: 20px;
+    font-family: $fontLemon;
+    font-size: 35px;
+    white-space: nowrap;
+    color: whitesmoke;
+  }
+  .titleBig__photo {
+    width: 280px;
+    height: 370px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+%contantTitleNormal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .normal__photo {
+    margin-top: 40px;
+    width: 200px;
+    height: 290px;
+    background-position: center;
+    background-size: cover;
+  }
+  .normal__text {
+    margin-top: 10px;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+  }
+}
+%contantQuote {
+  margin-top: 150px;
+  font-family: $fontLemon;
+  font-size: 40px;
+  text-align: center;
+}
+%contantTitles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    font-size: 48px;
+    font-family: $fontLemon;
+  }
+}
