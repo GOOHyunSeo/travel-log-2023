@@ -7,13 +7,13 @@
 @import "_variables.scss";
 @import "_element.scss";
 
+// screens
+@import "screens/index.scss";
+@import "screens/place.scss";
+@import "screens/detail.scss";
+
 * {
   box-sizing: border-box;
-}
-
-body {
-  width: 100%;
-  font-family: "Raleway", sans-serif;
 }
 
 header {
@@ -26,228 +26,34 @@ header {
   align-items: center;
   background-color: white;
   opacity: 0.9;
+  z-index: 3;
   h1 {
     font-size: 20px;
     font-weight: 700;
   }
-}
-
-.hero {
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  .hero__text {
-    width: 30%;
-    display: grid;
-    grid-template-rows: repeat(3, 80vh);
-    background-color: gainsboro;
-    color: white;
-    .hero__text-column {
-      position: relative;
-      padding: 20% 10%;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        transparent,
-        transparent,
-        rgba(0, 0, 0, 0.1) 99%
-      );
-      h2 {
-        font-size: $titleFont;
-        margin-bottom: 10px;
-        font-weight: 600;
-        font-style: italic;
-      }
-      .hero__text-date {
-        font-size: 20px;
-      }
+  .header__column {
+    width: 33%;
+    &:first-child {
+      align-items: center;
       a {
-        @extend %btn;
+        margin-left: 30px;
+      }
+    }
+    &:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:last-child {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        margin-right: 30px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
-  .hero__place {
-    width: 70%;
-    display: grid;
-    grid-template-rows: repeat(3, 80vh);
-    .hero__place-photo {
-      background-position: center;
-      background-size: cover;
-      &:first-child {
-        background-image: url("../../photos/hero_busan.JPG");
-      }
-      &:nth-child(2) {
-        background-image: url("../../photos/hero_gangneung.JPG");
-      }
-      &:last-child {
-        background-image: url("https://a.cdn-hotels.com/gdcs/production65/d1516/688b9c96-150f-49e4-9153-e87bc517af18.jpg?impolicy=fcrop&w=1600&h=1066&q=medium");
-      }
-    }
-  }
-}
-
-nav {
-  width: 100%;
-  height: 50vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 70px 0px;
-  .nav__column {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border-right: 0.8px solid $text_color;
-    color: $text_color;
-    font-size: 13px;
-    font-weight: 300;
-    .column__title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      opacity: 0.3;
-    }
-    li {
-      text-align: center;
-      margin-bottom: 5px;
-      &:hover:not(.dot) {
-        cursor: pointer;
-        text-decoration: line-through;
-      }
-    }
-  }
-}
-
-.contants {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-auto-rows: 520px;
-}
-
-contant {
-  padding: 30px 15px;
-  font-family: "Sacramento", cursive;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  &:nth-child(6n + 1) {
-    background-color: #eee5d8;
-  }
-  &:nth-child(6n + 2) {
-    background-color: lightblue;
-  }
-  &:nth-child(6n + 3) {
-    background-color: lightgoldenrodyellow;
-  }
-  &:nth-child(6n + 4) {
-    background-color: #c598ec;
-  }
-  &:nth-child(6n + 5) {
-    background-color: lightsalmon;
-  }
-  &:nth-child(6n) {
-    background-color: lightcoral;
-  }
-  .contant__footer {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.titleBig {
-  @extend %contantTitleBig;
-  &:hover {
-    filter: blur(30px);
-    cursor: pointer;
-  }
-}
-.titleNormal {
-  @extend %contantTitleNormal;
-  &:hover {
-    filter: blur(30px);
-    cursor: pointer;
-  }
-}
-.quoteFirst {
-  &:hover {
-    cursor: pointer;
-    background-image: url("../../photos/bonfire.JPG");
-    background-position: center;
-    background-size: cover;
-    .titleQuote {
-      opacity: 0;
-    }
-  }
-}
-.quoteSecond {
-  &:hover {
-    cursor: pointer;
-    background-image: url("../../photos/songjeong.JPG");
-    background-position: center;
-    background-size: cover;
-    .titleQuote {
-      opacity: 0;
-    }
-  }
-}
-.titleQuote {
-  @extend %contantQuote;
-}
-.titles {
-  @extend %contantTitles;
-  &:hover {
-    cursor: pointer;
-    .title {
-      &:first-child {
-        color: #dfcdaa;
-      }
-      &:nth-child(2) {
-        color: #b96f47;
-      }
-      &:nth-child(3) {
-        color: #cca7ec;
-      }
-      &:nth-child(4) {
-        color: #fb7b42;
-      }
-      &:nth-child(5) {
-        color: #6c95ce;
-      }
-      &:nth-child(6) {
-        color: #d4a335;
-      }
-      &:nth-child(7) {
-        color: #ada86a;
-      }
-      &:nth-child(8) {
-        color: lightpink;
-      }
-      &:last-child {
-        color: #b5d5a3;
-      }
-    }
-  }
-}
-
-.one {
-  background-image: url("../../photos/busan.jpeg");
-}
-.two {
-  background-image: url("../../photos/anmok.jpg");
-}
-.five {
-  background-image: url("../../photos/cheongsapo.JPG");
-}
-.seven {
-  background-image: url("../../photos/daegwallyeong.JPG");
-}
-.eight {
-  background-image: url("../../photos/gangneung.JPG");
-}
-.ten {
-  background-image: url("../../photos/youngdo-island.JPG");
-}
-.twelve {
-  background-image: url("../../photos/night.jpg");
 }

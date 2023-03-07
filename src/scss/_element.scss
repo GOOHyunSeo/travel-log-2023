@@ -1,18 +1,33 @@
 @import "_variables.scss";
 
 %btn {
-  position: absolute;
+  border: none;
+  background: inherit;
+}
+%leanMoreBtn {
   bottom: 100px;
   text-decoration: none;
   color: inherit;
-  border: 0.6px solid white;
+  border: 0.6px solid black;
   border-radius: 99px;
   padding: 10px 35px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 100;
   font-style: italic;
 }
-
+%placeTitle {
+  font-size: $titleFont;
+  font-weight: 600;
+  font-style: italic;
+}
+%placeDate {
+  font-size: 20px;
+  btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
 %contantTitleBig {
   display: flex;
   flex-direction: column;
