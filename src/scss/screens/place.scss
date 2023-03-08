@@ -61,7 +61,7 @@ nav {
 }
 
 contant {
-  padding: 30px 15px;
+  padding: 10% 5%;
   font-family: "Sacramento", cursive;
   display: flex;
   flex-direction: column;
@@ -92,18 +92,64 @@ contant {
 
 .titleBig {
   @extend %contantTitleBig;
+}
+.contant-titleBig {
+  .titleBig__header {
+    position: relative;
+    top: 20px;
+    font-size: 35px;
+  }
+  .titleBig__photo {
+    width: 280px;
+    height: 370px;
+  }
   &:hover {
     filter: blur(30px);
     cursor: pointer;
   }
 }
+.modal-titleBig {
+  .titleBig__header {
+    position: relative;
+    top: 10px;
+    font-size: 20px;
+  }
+  .titleBig__photo {
+    width: 180px;
+    height: 260px;
+  }
+}
+
 .titleNormal {
   @extend %contantTitleNormal;
+}
+.contant-titleNormal {
+  .normal__photo {
+    margin-top: 40px;
+    width: 200px;
+    height: 290px;
+  }
+  .normal__text {
+    margin-top: 10px;
+    font-size: 20px;
+  }
   &:hover {
     filter: blur(30px);
     cursor: pointer;
   }
 }
+.modal-titleNormal {
+  .normal__photo {
+    margin-top: 30px;
+    width: 140px;
+    height: 190px;
+  }
+  .normal__text {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+}
+
 .quoteFirst {
   &:hover {
     cursor: pointer;
@@ -129,8 +175,22 @@ contant {
 .titleQuote {
   @extend %contantQuote;
 }
+.contant-titleQuote {
+  margin-top: 150px;
+  font-size: 40px;
+}
+.modal-titleQuote {
+  margin-top: 100px;
+  font-size: 25px;
+}
+
 .titles {
   @extend %contantTitles;
+}
+.contant-titles {
+  .title {
+    font-size: 48px;
+  }
   &:hover {
     cursor: pointer;
     .title {
@@ -164,6 +224,11 @@ contant {
     }
   }
 }
+.modal-titles {
+  .title {
+    font-size: 35px;
+  }
+}
 
 .contant__plus {
   display: flex;
@@ -185,6 +250,8 @@ contant {
   //   display: none;
 }
 .modal_body {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -208,6 +275,7 @@ contant {
 }
 
 .modal__header {
+  height: 5%;
   display: flex;
   margin-bottom: 20px;
   .modal__header__column {
@@ -239,10 +307,12 @@ contant {
   }
 }
 .modal__main {
+  height: 90%;
   display: grid;
   gap: 5px;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 70%;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  // grid-template-rows: repeat(minmax(80%, 100%));
+  grid-auto-rows: repeat(minmax(50%, 100%));
   .modal__contant {
   }
 }

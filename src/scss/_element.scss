@@ -28,22 +28,19 @@
     }
   }
 }
+
 %contantTitleBig {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   .titleBig__header {
-    position: relative;
-    top: 20px;
     font-family: $fontLemon;
-    font-size: 35px;
     white-space: nowrap;
     color: whitesmoke;
   }
   .titleBig__photo {
-    width: 280px;
-    height: 370px;
+    background-color: red;
     background-position: center;
     background-size: cover;
   }
@@ -54,22 +51,16 @@
   justify-content: space-between;
   align-items: center;
   .normal__photo {
-    margin-top: 40px;
-    width: 200px;
-    height: 290px;
+    background-color: red;
     background-position: center;
     background-size: cover;
   }
   .normal__text {
-    margin-top: 10px;
     font-family: "Raleway", sans-serif;
-    font-size: 20px;
   }
 }
 %contantQuote {
-  margin-top: 150px;
   font-family: $fontLemon;
-  font-size: 40px;
   text-align: center;
 }
 %contantTitles {
@@ -78,7 +69,6 @@
   justify-content: space-between;
   align-items: center;
   .title {
-    font-size: 48px;
     font-family: $fontLemon;
   }
 }
